@@ -1,1 +1,22 @@
-<h1 class="text-center">PrimeNg Demo</h1>
+<p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '520px'}"
+  [numVisible]="5">
+  <ng-template pTemplate="header">
+    <h1>API's Tool</h1>
+  </ng-template>
+  <ng-template pTemplate="caption">
+    <h3>Apito screens</h3>
+  </ng-template>
+  <ng-template pTemplate="item" let-item>
+    <img [src]="item.previewImageSrc" style="width: 100%;" />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="grid grid-nogutter justify-content-center">
+      <img [src]="item.thumbnailImageSrc" />
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <h1>
+      Footer
+    </h1>
+  </ng-template>
+</p-galleria>
