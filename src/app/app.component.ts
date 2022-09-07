@@ -104,4 +104,9 @@ export class AppComponent implements OnInit {
       }
     ]
   }
+
+  myUploader(event: any) {
+    //event.files == files to upload
+    console.log(event);
+  }
 }

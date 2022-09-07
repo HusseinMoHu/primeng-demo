@@ -5,6 +5,8 @@ import { GalleriaModule } from 'primeng/galleria';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    GalleriaModule
+    HttpClientModule,
+    GalleriaModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

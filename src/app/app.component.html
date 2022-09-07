@@ -1,10 +1,10 @@
-<p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '520px'}"
-  [numVisible]="5">
+<p-galleria [value]="images" [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{'max-width': '520px', 'margin': 'auto'}" [numVisible]="5">
   <ng-template pTemplate="header">
-    <h1>API's Tool</h1>
+    <h2 class="text-center text-cyan-800">API's Tool</h2>
   </ng-template>
   <ng-template pTemplate="caption">
-    <h3>Apito screens</h3>
+    <p>Apito screens</p>
   </ng-template>
   <ng-template pTemplate="item" let-item>
     <img [src]="item.previewImageSrc" style="width: 100%;" />
@@ -15,8 +15,8 @@
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <h1>
-      Footer
-    </h1>
+    <p-fileUpload name="myfile[]" url="/backend/upload-to-s3" [multiple]="true" accept="image/*" [maxFileSize]="1000000"
+      (uploadHandler)="myUploader($event)">
+    </p-fileUpload>
   </ng-template>
 </p-galleria>
