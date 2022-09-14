@@ -1,5 +1,5 @@
 <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"
-  [containerStyle]="{'max-width': '520px', 'margin': 'auto'}" [numVisible]="5">
+  [containerStyle]="{'max-width': '720px', 'margin': 'auto'}" [numVisible]="5">
   <ng-template pTemplate="header">
     <h2 class="text-center text-cyan-800">API's Tool</h2>
   </ng-template>
@@ -7,7 +7,9 @@
     <p>Apito screens</p>
   </ng-template>
   <ng-template pTemplate="item" let-item>
-    <img [src]="item.previewImageSrc" style="width: 100%;" />
+    <img (resized)="onResized($event)" (click)="placeIcon($event)" [src]="item.previewImageSrc" style="width: 100%;" />
+    <i class="pi pi-bookmark-fill" [style.display]="showIcon ? 'inherit' : 'none'" [style.top.px]="y"
+      [style.left.px]="x"></i>
   </ng-template>
   <ng-template pTemplate="thumbnail" let-item>
     <div class="grid grid-nogutter justify-content-center">

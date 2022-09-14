@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularResizeEventModule } from 'angular-resize-event';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     GalleriaModule,
-    FileUploadModule
+    FileUploadModule,
+    AngularResizeEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]

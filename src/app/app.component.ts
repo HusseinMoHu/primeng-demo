@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { ResizedEvent } from 'angular-resize-event';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,13 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  showIcon: boolean = false;
   images!: any[];
+  x: number = 0;
+  y: number = 0;
+  firstWidth!: number;
+  width!: number;
+  height!: number;
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
@@ -108,5 +115,18 @@ export class AppComponent implements OnInit {
   myUploader(event: any) {
     //event.files == files to upload
     console.log(event);
+  }
+
+  placeIcon(e: any) {
+    this.showIcon = true
+    this.x = e.offsetX - 20;
+    this.y = e.offsetY - 20;
+  }
+
+  onResized(event: ResizedEvent) {
+    if (event.oldRect) {
+      this.x = this.x * (event.newRect.width / event.oldRect.width);
+      this.y = this.y * (event.newRect.height / event.oldRect.height);
+    }
   }
 }
